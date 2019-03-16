@@ -1,0 +1,9 @@
+CREATE STREAM twitter AS \
+SELECT TIMESTAMPTOSTRING(CreatedAt, 'yyyy-MM-dd HH:mm:ss.SSS') AS CreatedAt,\
+EXTRACTJSONFIELD(user,'$.Name') AS user_Name,\
+EXTRACTJSONFIELD(user,'$.ScreenName') AS user_ScreenName,\
+EXTRACTJSONFIELD(user,'$.Location') AS user_Location,\
+EXTRACTJSONFIELD(user,'$.Description') AS  user_Description,\
+Text,hashtagentities,lang \
+FROM twitter_raw ;
+
