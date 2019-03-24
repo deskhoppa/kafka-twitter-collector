@@ -58,5 +58,6 @@ If all is well then Twitter data should be sent to the topic. Using the handy `k
 
 In the `ksql-queries` are two ksql queries that are helpful.
 
+- `create_twitter_raw.ksql` Do this first, creates the stream of raw Twitter data. The query stream below reads from this stream.
 - `create_stream.ksql` Creates a table stream of cleaned up Twitter data. Note the use of the `EXTRACTJSONFIELD` function, rather handy.
 - `reset_offset.ksql` While testing it's good to be able to reset the topic offset back to the start so you can retest your queries.
